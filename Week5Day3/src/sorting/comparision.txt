@@ -1,0 +1,24 @@
+Comparison of Time Complexities:
+
+Merge Sort:
+Time Complexity: O(n log n) in all cases (worst-case, average-case, and best-case).
+Merge Sort divides the array into two halves, recursively sorts them, and then merges the two sorted halves. It ensures that the entire array is sorted.
+Stable sort (maintains the relative order of records with equal keys).
+
+Quick Sort:
+Average Case Time Complexity: O(n log n).
+Worst Case Time Complexity: O(n^2) (rare, happens when the partitioning is unbalanced).
+Quick Sort picks a pivot element and partitions the array around the pivot, placing the pivot in its correct position. It then recursively sorts the subarrays.
+Not stable (may change the relative order of records with equal keys).
+
+Performance Characteristics:
+
+Merge Sort:
+Generally performs consistently well across different input sizes.
+Uses additional space proportional to the size of the input array due to the merge step.
+Ideal for scenarios where the extra space is not a concern or when stability in sorting is required.
+
+Quick Sort:
+Typically faster than Merge Sort due to its in-place partitioning and fewer comparisons in practice.
+However, worst-case time complexity (O(n^2)) can occur, especially with already sorted or nearly sorted arrays, though this is rare with good pivot selection strategies.
+Memory efficient as it sorts in-place, i.e., uses constant extra space.
