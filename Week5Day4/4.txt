@@ -1,0 +1,53 @@
+Inheritance:
+In Java, inheritance allows a subclass (child class) to inherit attributes and behaviors from a superclass (parent class). This promotes code reuse and hierarchical organization. The extends keyword establishes this relationship, enabling subclasses to modify or extend inherited behaviors.
+
+Polymorphism:
+Polymorphism in Java enables objects to be treated as instances of their superclass, facilitating flexibility and code reuse. Method overloading supports compile-time polymorphism by allowing multiple methods with the same name but different parameters. Method overriding enables runtime polymorphism by allowing a subclass to provide a specific implementation of a method defined in its superclass.
+
+extends and super keywords:
+extends is used to create a subclass that inherits from a superclass (class Dog extends Animal).
+super is used in a subclass to refer to its superclass, accessing its constructor, methods, or fields.
+
+Method Overloading:
+Method overloading in Java allows a class to have multiple methods with the same name but different parameters. This provides flexibility and improves code readability by offering different ways to call methods based on the parameters provided.
+
+Example:
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+In this example, add(int a, int b) and add(double a, double b) are overloaded methods with different parameter types.
+
+Method Overriding:
+Method overriding occurs when a subclass provides its own implementation of a method that is already defined in its superclass. This allows for runtime polymorphism, where the method called is determined by the object's actual type at runtime.
+
+Example:
+// Superclass
+public class Animal {
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Subclass overriding makeSound()
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+In this example, Dog overrides the makeSound method from Animal, providing a specific implementation (Dog barks). Method overriding allows for more specialized behavior in subclasses while maintaining a common interface defined in the superclass.
+
+Comparison and Polymorphism:
+
+Role in Polymorphism: Method overloading achieves compile-time polymorphism by allowing multiple methods with the same name but different parameters. Method overriding achieves runtime polymorphism by allowing a subclass to provide a specific implementation of a method inherited from its superclass.
+
+Usefulness: Overloading is useful for providing multiple methods with similar functionality but different parameter types or numbers. Overriding is useful for providing specific implementations of methods in subclasses to extend or modify behavior inherited from the superclass.
+
+In summary, method overloading and overriding are essential features in Java that enhance code flexibility and reusability by supporting both compile-time and runtime polymorphism, respectively.
+

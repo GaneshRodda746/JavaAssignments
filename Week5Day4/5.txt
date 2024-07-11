@@ -1,0 +1,39 @@
+Abstract Classes:
+Abstract classes in Java serve as blueprints for other classes and cannot be instantiated on their own. They may contain abstract methods (methods without a body) that must be implemented by subclasses, along with concrete methods that provide default behavior. Abstract classes are used when you want to define a common structure for a group of related classes without creating instances of the abstract class itself.
+
+Example:
+// Abstract class
+public abstract class Shape {
+    // Abstract method (no implementation)
+    public abstract double area();
+    
+    // Concrete method
+    public void display() {
+        System.out.println("Displaying shape");
+    }
+}
+
+Interfaces:
+Interfaces in Java are similar to abstract classes but can only contain method signatures (names, parameters, return types) without any method implementations. All methods in interfaces are implicitly public and abstract, and classes implement interfaces to provide specific implementations for the methods defined in the interface. Interfaces are used to define a contract that classes must adhere to, ensuring consistency and interoperability.
+
+Example:
+// Interface
+public interface Drawable {
+    // Method signature (implicitly abstract and public)
+    void draw();
+    
+    void resize();
+}
+
+Differences:
+
+Purpose: Abstract classes define a common structure and behavior for subclasses, while interfaces specify a set of methods that implementing classes must define.
+Method Implementation: Abstract classes can have both abstract and concrete methods, whereas interfaces can only have method signatures (abstract methods).
+Multiple Inheritance: Java allows a class to extend only one abstract class, but it can implement multiple interfaces.
+
+Benefits of Using Interfaces:
+
+Flexibility with Multiple Inheritance: Classes can implement multiple interfaces, allowing them to inherit behaviors from multiple sources and enabling flexible design.
+Promotion of Loose Coupling: Programming to interfaces rather than concrete implementations promotes modular and maintainable code. It reduces dependencies and allows easier integration of different components.
+Contract Enforcement: Interfaces enforce a contract that classes implementing them must fulfill, ensuring consistency and interoperability across different parts of a program.
+Enhanced Testability: Interfaces facilitate unit testing by enabling easier mocking and stubbing. They allow components to be tested independently by providing mock implementations during testing.

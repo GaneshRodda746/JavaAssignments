@@ -1,0 +1,38 @@
+Class: A class in Java is like a blueprint or template that describes the properties (attributes) and behaviors (methods) that objects created from the class will have.
+
+Example:
+
+public class Car {
+    String model;
+    int year;
+    String color;
+    
+    // Constructor
+    public Car(String model, int year, String color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+    
+    // Method
+    public void displayDetails() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Color: " + color);
+    }
+}
+
+Object: An object is an instance of a class. It represents a concrete entity based on the class blueprint, with its own unique set of values for the attributes and can perform actions defined by the methods.
+
+Example:
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Car class
+        Car myCar = new Car("Toyota Camry", 2023, "Silver");
+        
+        // Using the object to call methods
+        myCar.displayDetails();
+    }
+}
+
+Relationship: A class defines the blueprint for objects, and objects are instances of classes that have specific values for their attributes and can perform actions defined by the class methods.

@@ -1,0 +1,110 @@
+1. Encapsulation: Encapsulation involves bundling data and methods into a single unit, ensuring that the internal state of an object is accessed and modified through controlled methods.
+
+Importance:
+
+Data Hiding: Encapsulation helps in hiding the internal state of an object from the outside world. This reduces complexity and increases security.
+Modularity: By bundling related methods and attributes together, encapsulation promotes modularity and improves code readability and maintainability.
+
+Example:
+
+public class Car {
+    private String brand;
+    private int year;
+
+    // Getter method for brand
+    public String getBrand() {
+        return brand;
+    }
+
+    // Setter method for brand
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    // Getter method for year
+    public int getYear() {
+        return year;
+    }
+
+    // Setter method for year
+    public void setYear(int year) {
+        this.year = year;
+    }
+}
+In this example, Car class encapsulates the brand and year attributes with getter and setter methods, allowing controlled access to these attributes.
+
+2. Inheritance: Inheritance allows a class to inherit properties and behaviors from another class, promoting code reuse and facilitating the creation of class hierarchies.
+
+Importance:
+
+Code Reuse: Inheritance allows us to reuse fields and methods of an existing class when creating a new class.
+Extensibility: It facilitates the extension of existing functionality without modifying the existing code.
+
+Example:
+
+// Parent class
+class Vehicle {
+    protected String brand;
+
+    public void drive() {
+        System.out.println("Vehicle is driving");
+    }
+}
+
+// Child class inheriting from Vehicle
+class Car extends Vehicle {
+    private int numberOfDoors;
+
+    public void setNumberOfDoors(int doors) {
+        this.numberOfDoors = doors;
+    }
+
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+}
+In this example, Car inherits from Vehicle, gaining access to the brand attribute and drive() method.
+
+3. Polymorphism: Polymorphism enables objects to be treated as instances of their superclass, allowing methods to be called on objects of different types through a unified interface.
+
+Importance:
+
+Flexibility: Polymorphism allows a single interface to be used to denote different types.
+Code Extensibility: It simplifies the addition of new classes that extend the functionality of existing classes.
+
+Example:
+
+// Animal class (superclass)
+class Animal {
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+// Dog class (subclass)
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+// Cat class (subclass)
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+// Example of polymorphism
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+
+        myDog.makeSound(); // Output: Bark
+        myCat.makeSound(); // Output: Meow
+    }
+}
+In this example, Dog and Cat are subclasses of Animal. By using polymorphism, we can treat instances of Dog and Cat as instances of Animal, calling makeSound() method which behaves differently based on the actual object type.

@@ -1,0 +1,23 @@
+Constructors in Java are special methods within a class designed to initialize objects when they are instantiated using the new keyword. 
+Their primary role is to set initial values to the object's attributes, ensuring that the object starts in a valid state. Constructors 
+are named identically to the class they belong to and do not have a return type, not even void. They are invoked implicitly when an 
+object is created and can be overloaded to provide different ways of initializing objects with varying sets of parameters.
+
+Example:
+
+public class Car {
+    private String model;
+    private int year;
+    private String color;
+
+    // Constructor
+    public Car(String model, int year, String color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota Camry", 2023, "Silver");
+    }
+}

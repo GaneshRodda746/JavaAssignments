@@ -1,0 +1,60 @@
+In Java, access modifiers dictate the visibility and accessibility of classes, fields, methods, and constructors within a program. There are four types of access modifiers: public, protected, default (package-private), and private.
+
+public: The public modifier allows unrestricted access to the associated element from any other class or package. It has the widest scope among all access modifiers and is commonly used for methods that need to be accessed from outside the class.
+
+protected: The protected modifier allows access to the associated element within the same class, subclasses, and classes in the same package. It is useful when you want to provide access to derived classes (subclasses) but restrict access to classes outside the package.
+
+default (package-private): If no access modifier is specified (also known as default), the element is accessible within the same package only. It restricts access from outside the package, promoting encapsulation of implementation details.
+
+private: The private modifier restricts access to the associated element strictly within the same class. It ensures that the element is not accessible from any other class, even subclasses, promoting data hiding and encapsulation.
+
+example:
+
+public class Employee {
+    private String name;
+    private double salary;
+    
+    // Constructor
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+    
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // Getter for salary
+    public double getSalary() {
+        return salary;
+    }
+    
+    // Setter for salary
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    
+    public static void main(String[] args) {
+        // Creating an object of Employee class
+        Employee emp = new Employee("John Doe", 50000.0);
+        
+        // Using getters and setters
+        emp.setName("Jane Smith");
+        emp.setSalary(60000.0);
+        
+        // Retrieving and printing employee details
+        System.out.println("Employee Name: " + emp.getName());
+        System.out.println("Employee Salary: $" + emp.getSalary());
+    }
+}
+
+
+Importance of Encapsulation:
+
+Encapsulation plays a crucial role in Java programming by enforcing data integrity, security, and maintainability. By making fields private, such as name and salary in the Employee class, encapsulation restricts direct access to these variables from outside the class. Instead, controlled access is provided through public getter and setter methods. This ensures that the internal state of objects remains consistent and valid, reducing the risk of accidental data corruption or unauthorized modification. Moreover, encapsulation enhances code security by preventing external classes from manipulating sensitive data directly. It also promotes code maintainability by encapsulating implementation details within the class, allowing changes to be made to the internal representation of data without affecting other parts of the program. Overall, encapsulation is a fundamental principle in Java that supports robust, secure, and modular software development practices.

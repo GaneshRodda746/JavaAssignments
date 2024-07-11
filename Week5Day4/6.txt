@@ -1,0 +1,57 @@
+Composition:
+Composition in Java is a design principle where a class contains references to other objects. It allows one class to be composed of one or more objects of other classes, creating a "has-a" relationship. This approach emphasizes building complex functionalities by combining simpler, reusable components.
+
+Example:
+// Example of Composition
+public class Engine {
+    public void start() {
+        System.out.println("Engine starting");
+    }
+}
+
+public class Car {
+    private Engine engine; // Car has-a Engine
+    
+    public Car() {
+        this.engine = new Engine();
+    }
+    
+    public void startCar() {
+        engine.start(); // Delegates start functionality to Engine
+        System.out.println("Car started");
+    }
+}
+
+Inheritance:
+Inheritance in Java is a mechanism where a subclass (child class) inherits properties and behaviors from a superclass (parent class). It promotes code reuse and establishes an "is-a" relationship between classes.
+
+Example:
+// Example of Inheritance
+public class Animal {
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+public class Dog extends Animal {
+    public void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+Comparison and Scenarios
+When to Prefer Composition:
+
+Flexible Behavior: Use composition when classes need to combine functionalities of multiple classes dynamically.
+Code Reuse: Allows reusing existing components without being bound to the hierarchy of inheritance.
+Reduced Coupling: Reduces tight coupling between classes compared to inheritance.
+Advantages of Inheritance:
+
+Code Reuse: Inherited methods and attributes can be reused across subclasses.
+Polymorphism: Enables polymorphic behavior, where a subclass can be treated as an instance of its superclass.
+Hierarchy: Establishes a clear hierarchical relationship between classes.
+Disadvantages of Inheritance:
+
+Coupling: Can lead to tight coupling between classes, making the code harder to maintain.
+Inflexibility: Subclasses are dependent on the superclass implementation, limiting flexibility in design changes.
+Complexity: Deep inheritance hierarchies can become complex and difficult to understand.

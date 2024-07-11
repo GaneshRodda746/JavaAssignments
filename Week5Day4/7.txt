@@ -1,0 +1,137 @@
+Design Patterns: Design patterns in software development are proven solutions to common problems that developers encounter during the design and implementation of software. They provide reusable templates that help in designing code that is more maintainable, modular, and efficient.
+
+Importance:
+
+Reusability: Design patterns promote code reuse and help in building scalable and maintainable software systems.
+Common Language: They provide a common vocabulary and set of solutions that developers can use to communicate and solve recurring problems.
+Best Practices: Design patterns encapsulate best practices and guidelines for software design, ensuring quality and reliability.
+
+Singleton Design Pattern: The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
+
+Example:
+public class Singleton {
+    private static Singleton instance;
+    
+    // Private constructor to prevent instantiation
+    private Singleton() {}
+    
+    // Lazy initialization with double-checked locking
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+Application and Benefits:
+
+Application: Use Singleton when you want to restrict the instantiation of a class to one object, such as for logging, configuration settings, or managing a connection pool.
+Benefits: Ensures there is only one instance of the class throughout the application, saves memory, and provides a global access point to that instance.
+
+Factory Design Pattern: The Factory design pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+Example:
+// Interface for Product
+public interface Product {
+    void display();
+}
+
+// Concrete implementations of Product
+public class ProductA implements Product {
+    @Override
+    public void display() {
+        System.out.println("Product A");
+    }
+}
+
+public class ProductB implements Product {
+    @Override
+    public void display() {
+        System.out.println("Product B");
+    }
+}
+
+// Factory class
+public class ProductFactory {
+    // Method to create Product objects
+    public Product createProduct(String type) {
+        if ("A".equals(type)) {
+            return new ProductA();
+        } else if ("B".equals(type)) {
+            return new ProductB();
+        }
+        return null;
+    }
+}
+
+Application and Benefits:
+
+Application: Use Factory when you want to create objects without specifying the exact class of object that will be created until runtime, or when the creation process is complex and needs to be encapsulated.
+Benefits: Promotes loose coupling between client code and objects being created, simplifies object creation, and allows for easy extension by adding new product types without modifying existing code.
+
+Builder Design Pattern: The Builder design pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+Example:
+// Product class
+public class Car {
+    private String model;
+    private int year;
+    private String color;
+    
+    // Private constructor
+    private Car(Builder builder) {
+        this.model = builder.model;
+        this.year = builder.year;
+        this.color = builder.color;
+    }
+    
+    // Builder class
+    public static class Builder {
+        private String model;
+        private int year;
+        private String color;
+        
+        public Builder setModel(String model) {
+            this.model = model;
+            return this;
+        }
+        
+        public Builder setYear(int year) {
+            this.year = year;
+            return this;
+        }
+        
+        public Builder setColor(String color) {
+            this.color = color;
+            return this;
+        }
+        
+        public Car build() {
+            return new Car(this);
+        }
+    }
+    
+    // Getters
+    public String getModel() {
+        return model;
+    }
+    
+    public int getYear() {
+        return year;
+    }
+    
+    public String getColor() {
+        return color;
+    }
+}
+
+Application and Benefits:
+
+Application: Use Builder when you need to create objects that require complex construction processes, involve multiple steps, or have optional parameters.
+Benefits: Simplifies object creation by separating the construction logic from the representation, ensures immutability by creating objects in a consistent state, and improves code readability by providing fluent interfaces for setting object properties.
+
